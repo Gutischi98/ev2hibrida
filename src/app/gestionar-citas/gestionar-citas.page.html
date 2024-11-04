@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Gestionar Citas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-content class="ion-padding">
+    <app-cita-form (citaAgregada)="agregarCita($event)"></app-cita-form>
+  <ion-list>
+    <ion-item *ngFor="let cita of citas">
+      <div *ngIf="cita"> 
+        <p>"{{ cita.texto }}"</p>
+        <p>- {{ cita.autor }}</p>
+      </div>
+      <ion-button color="danger" (click)="eliminarCita(cita)">Eliminar</ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+

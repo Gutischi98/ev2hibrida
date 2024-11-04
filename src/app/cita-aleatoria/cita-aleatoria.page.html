@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Cita Aleatoria</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ng-container *ngIf="citaAleatoria; else loading">
+    <h2>"{{ citaAleatoria.texto }}"</h2>
+    <p>- {{ citaAleatoria.autor }}</p>
+  </ng-container>
+  <ng-template #loading>
+    <ion-spinner></ion-spinner>
+    <p>Cargando cita...</p>
+  </ng-template>
+</ion-content>
